@@ -52,10 +52,12 @@ function OrderSummary({ course, total }) {
       <div className="border-t mt-6 pt-6">
         <h3 className="font-semibold mb-4">Detalles del pedido (1 curso)</h3>
         <div className="flex gap-4">
-          <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0 flex items-center justify-center overflow-hidden">
-            <svg className="w-10 h-10 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
-            </svg>
+          <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+            <img 
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/643db360478709.5a4e92c45df8c.jpg"
+              alt="Course preview"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="flex-1">
             <h4 className="font-medium text-sm leading-tight mb-1">{course.title}</h4>

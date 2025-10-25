@@ -189,7 +189,7 @@ function CourseOffer() {
                             {/* Video Preview */}
                             <div className="relative aspect-video bg-gray-800">
                                 <img
-                                    src="https://img-c.NoUdemycdn.com/course/480x270/1713546_e3bd_7.jpg"
+                                    src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/643db360478709.5a4e92c45df8c.jpg"
                                     alt="Course preview"
                                     className="w-full h-full object-cover"
                                 />

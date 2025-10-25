@@ -56,7 +56,7 @@ function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
     }
 
     const result = await sendPayment(totalAmount);
-    
+
     if (result.success) {
       console.log('Pago exitoso:', result.txHash);
     } else {
@@ -117,11 +117,18 @@ function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
             isSelected={paymentMethod === 'wallet'}
             onSelect={setPaymentMethod}
             icon={
-              <img
-                src="https://play-lh.googleusercontent.com/HUk0fYbBtiJUFO1H_GCYq4p6kPxifsRP5vqHG96ZeK38-hepdPUU0GMprslWvItn3WUj"
-                alt="Wallet"
-                className="w-6 h-6"
-              />
+              <div className="flex gap-1">
+                <img
+                  src="https://play-lh.googleusercontent.com/P-xt-cfYUtwVQ3YsNb5yd5_6MzCHmcKAbRkt-up8Ga44x_OCGLy4WFxsGhxfJaSLEw=w480-h960-rw"
+                  alt="Ready Wallet"
+                  className="w-6 h-6"
+                />
+                <img
+                  src="https://play-lh.googleusercontent.com/HUk0fYbBtiJUFO1H_GCYq4p6kPxifsRP5vqHG96ZeK38-hepdPUU0GMprslWvItn3WUj"
+                  alt="Braavos Wallet"
+                  className="w-6 h-6 rounded-full"
+                />
+              </div>
             }
             title="Conectar a wallet"
             statusBadge={
