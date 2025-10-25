@@ -30,6 +30,7 @@ function App() {
             <CheckoutForm 
               paymentMethod={paymentMethod}
               setPaymentMethod={setPaymentMethod}
+              totalAmount={calculateTotal()}
             />
           </div>
 

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Check, CreditCard, Smartphone, Wallet as WalletIcon } from 'lucide-react';
 import { useWalletConnection } from '../hooks/useWalletConnection';
+import { useStarknetTransaction } from '../hooks/useStarknetTransaction';
 import WalletModal from './wallet/WalletModal';
 import WalletConnectionSection from './wallet/WalletConnectionSection';
 import PaymentMethodCard from './checkout/PaymentMethodCard';
 
-function CheckoutForm({ paymentMethod, setPaymentMethod }) {
+function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [availableWallets, setAvailableWallets] = useState([]);
 
@@ -14,11 +15,20 @@ function CheckoutForm({ paymentMethod, setPaymentMethod }) {
     walletConnected,
     walletAddress,
     error,
+    starknetInstance,
     detectWallets,
     connectWallet,
     disconnectWallet,
     formatAddress
   } = useWalletConnection();
+
+  const {
+    sendPayment,
+    getTokenBalance,
+    isProcessing,
+    txHash,
+    error: txError
+  } = useStarknetTransaction(starknetInstance);
 
   // Abrir modal de selección de wallet
   const handleOpenWalletModal = () => {
@@ -36,6 +46,22 @@ function CheckoutForm({ paymentMethod, setPaymentMethod }) {
   const handleConnectWallet = async (wallet) => {
     setShowWalletModal(false);
     await connectWallet(wallet);
+  };
+
+  // Manejar pago
+  const handlePayment = async () => {
+    if (!totalAmount || totalAmount <= 0) {
+      alert('Monto inválido');
+      return;
+    }
+
+    const result = await sendPayment(totalAmount);
+    
+    if (result.success) {
+      console.log('Pago exitoso:', result.txHash);
+    } else {
+      console.error('Error en pago:', result.error);
+    }
   };
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
@@ -114,6 +140,11 @@ function CheckoutForm({ paymentMethod, setPaymentMethod }) {
               onConnect={handleOpenWalletModal}
               onDisconnect={disconnectWallet}
               formatAddress={formatAddress}
+              onPay={handlePayment}
+              isProcessing={isProcessing}
+              txHash={txHash}
+              txError={txError}
+              amount={totalAmount}
             />
           </PaymentMethodCard>
 
