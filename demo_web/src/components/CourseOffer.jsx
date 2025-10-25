@@ -10,34 +10,34 @@ function CourseOffer() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900">
+        <div className="min-h-screen bg-gray-50">
             {/* Header */}
-            <header className="bg-black border-b border-gray-800">
+            <header className="bg-white border-b border-gray-200 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center gap-8">
-                            <div className="text-white text-2xl font-bold">NoUdemy</div>
-                            <button className="text-gray-300 hover:text-white text-sm">Explorar</button>
+                            <div className="text-gray-900 text-2xl font-bold">NoUdemy</div>
+                            <button className="text-gray-600 hover:text-gray-900 text-sm">Explorar</button>
                             <div className="relative hidden md:block">
                                 <input
                                     type="text"
                                     placeholder="Busca cualquier cosa"
-                                    className="bg-gray-800 text-white placeholder-gray-400 px-4 py-2 pr-10 rounded-full w-96 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                    className="bg-gray-100 text-gray-900 placeholder-gray-500 px-4 py-2 pr-10 rounded-full w-96 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 border border-gray-300"
                                 />
-                                <svg className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
-                            <button className="text-gray-300 hover:text-white text-sm hidden md:block">Planes y precios</button>
-                            <button className="text-gray-300 hover:text-white text-sm hidden md:block">NoUdemy Business</button>
-                            <button className="text-gray-300 hover:text-white text-sm hidden md:block">Instructor</button>
-                            <button className="text-gray-300 hover:text-white text-sm hidden md:block">Aprendiendo</button>
-                            <button className="text-gray-300 hover:text-white">
+                            <button className="text-gray-600 hover:text-gray-900 text-sm hidden md:block">Planes y precios</button>
+                            <button className="text-gray-600 hover:text-gray-900 text-sm hidden md:block">NoUdemy Business</button>
+                            <button className="text-gray-600 hover:text-gray-900 text-sm hidden md:block">Instructor</button>
+                            <button className="text-gray-600 hover:text-gray-900 text-sm hidden md:block">Aprendiendo</button>
+                            <button className="text-gray-600 hover:text-gray-900">
                                 <Heart className="w-6 h-6" />
                             </button>
-                            <button className="text-gray-300 hover:text-white">
+                            <button className="text-gray-600 hover:text-gray-900">
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                                 </svg>
@@ -52,12 +52,12 @@ function CourseOffer() {
 
             {/* Breadcrumb */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <div className="flex items-center gap-2 text-sm text-purple-400">
-                    <span className="hover:text-purple-300 cursor-pointer">Negocio</span>
-                    <span className="text-gray-600">›</span>
-                    <span className="hover:text-purple-300 cursor-pointer">Análisis de negocios e inteligencia empresarial</span>
-                    <span className="text-gray-600">›</span>
-                    <span className="hover:text-purple-300 cursor-pointer">Cadena de bloques</span>
+                <div className="flex items-center gap-2 text-sm text-purple-600">
+                    <span className="hover:text-purple-700 cursor-pointer">Negocio</span>
+                    <span className="text-gray-400">›</span>
+                    <span className="hover:text-purple-700 cursor-pointer">Análisis de negocios e inteligencia empresarial</span>
+                    <span className="text-gray-400">›</span>
+                    <span className="hover:text-purple-700 cursor-pointer">Cadena de bloques</span>
                 </div>
             </div>
 
@@ -66,10 +66,10 @@ function CourseOffer() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Left Column */}
                     <div className="lg:col-span-2">
-                        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             Blockchain AZ: Construye una Blockchain, una Criptomoneda + Premio ChatGPT
                         </h1>
-                        <p className="text-gray-300 text-lg mb-6">
+                        <p className="text-gray-700 text-lg mb-6">
                             ¡Aprovecha el poder de la tecnología más disruptiva desde internet con ejemplos reales! Domina Blockchain ahora.
                         </p>
 
@@ -89,23 +89,23 @@ function CourseOffer() {
                                         </svg>
                                     ))}
                                 </div>
-                                <span className="text-purple-400">(22,142 valoraciones)</span>
+                                <span className="text-purple-600">(22,142 valoraciones)</span>
                             </div>
-                            <span className="text-gray-400">132,123 estudiantes</span>
+                            <span className="text-gray-600">132,123 estudiantes</span>
                         </div>
 
-                        <div className="mb-6 text-sm text-gray-300">
+                        <div className="mb-6 text-sm text-gray-700">
                             <span>Creado por </span>
-                            <span className="text-purple-400 underline cursor-pointer">Hadelin de Ponteves</span>
+                            <span className="text-purple-600 underline cursor-pointer">Hadelin de Ponteves</span>
                             <span>, </span>
-                            <span className="text-purple-400 underline cursor-pointer">Kirill Eremenko</span>
+                            <span className="text-purple-600 underline cursor-pointer">Kirill Eremenko</span>
                             <span>, </span>
-                            <span className="text-purple-400 underline cursor-pointer">Equipo SuperDataScience</span>
+                            <span className="text-purple-600 underline cursor-pointer">Equipo SuperDataScience</span>
                             <span>, </span>
-                            <span className="text-purple-400 underline cursor-pointer">Ligency</span>
+                            <span className="text-purple-600 underline cursor-pointer">Ligency</span>
                         </div>
 
-                        <div className="flex items-center gap-4 mb-8 text-sm text-gray-300 flex-wrap">
+                        <div className="flex items-center gap-4 mb-8 text-sm text-gray-600 flex-wrap">
                             <div className="flex items-center gap-2">
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -127,7 +127,7 @@ function CourseOffer() {
                         </div>
 
                         {/* Features */}
-                        <div className="bg-gray-800 rounded-lg p-8 mb-8">
+                        <div className="bg-blue-50 border border-blue-100 rounded-lg p-8 mb-8">
                             <div className="flex items-center gap-4">
                                 <div className="bg-purple-600 p-3 rounded-lg flex-shrink-0">
                                     <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -135,9 +135,9 @@ function CourseOffer() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <div className="text-white font-semibold text-lg mb-1">De primera calidad</div>
-                                    <div className="text-gray-400 text-sm">
-                                        Accede a más de 30,000 cursos de primer nivel con un plan NoUdemy y precios. <span className="text-purple-400 underline cursor-pointer">Consulta planes</span>
+                                    <div className="text-gray-900 font-semibold text-lg mb-1">De primera calidad</div>
+                                    <div className="text-gray-600 text-sm">
+                                        Accede a más de 30,000 cursos de primer nivel con un plan NoUdemy y precios. <span className="text-purple-600 underline cursor-pointer">Consulta planes</span>
                                     </div>
                                 </div>
                             </div>
@@ -145,39 +145,39 @@ function CourseOffer() {
 
                         {/* What you'll learn */}
                         <div className="mb-8">
-                            <h2 className="text-2xl font-bold text-white mb-6">¿Qué aprenderás?</h2>
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">¿Qué aprenderás?</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">¿Por qué es esto importante?</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">¿Por qué es esto importante?</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Entender la teoría detrás de Blockchain</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Entender la teoría detrás de Blockchain</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Crear una cadena de bloques</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Crear una cadena de bloques</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Comprender la teoría detrás de las criptomonedas</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Comprender la teoría detrás de las criptomonedas</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Comprender la teoría detrás de las transacciones de criptomonedas</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Comprender la teoría detrás de las transacciones de criptomonedas</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Crear su propia moneda</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Crear su propia moneda</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Comprender la teoría detrás de los contratos inteligentes</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Comprender la teoría detrás de los contratos inteligentes</span>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-gray-300 text-sm">Crear sus propios contratos inteligentes</span>
+                                    <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm">Crear sus propios contratos inteligentes</span>
                                 </div>
                             </div>
                         </div>
