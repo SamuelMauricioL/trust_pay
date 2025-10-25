@@ -9,7 +9,6 @@ edition = "2024_07"
 starknet = "2.11.4"
 
 [dev-dependencies]
-snforge_std = "0.33.0"
 snforge_std_deprecated = "0.48.1"
 assert_macros = "2.11.4"
 
@@ -20,7 +19,7 @@ sierra = true
 test = "snforge test"
 
 [tool.scarb]
-allow-prebuilt-plugins = ["snforge_std_deprecated", "snforge_std"]
+allow-prebuilt-plugins = ["snforge_std_deprecated"]
 
 # Visit https://foundry-rs.github.io/starknet-foundry/appendix/scarb-toml.html for more information
 

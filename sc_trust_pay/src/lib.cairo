@@ -1,32 +1,54 @@
-/// Interface representing `HelloContract`.
-/// This interface allows modification and retrieval of the contract balance.
+// Contrato de Holdeo Temporal (Escrow) - Starknet (Cairo 1.0)
+
+// Dependencias
+use starknet::ContractAddress;
+
+// Interfaz del token (asumiendo ETH/STRK)
 #[starknet::interface]
-pub trait IHelloStarknet<TContractState> {
-    /// Increase contract balance.
-    fn increase_balance(ref self: TContractState, amount: felt252);
-    /// Retrieve contract balance.
-    fn get_balance(self: @TContractState) -> felt252;
+trait ITokenContract<TContractState> {
+    fn transfer(ref self: TContractState, recipient: ContractAddress, amount: u256);
 }
 
-/// Simple contract for managing balance.
 #[starknet::contract]
-mod HelloStarknet {
-    use starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
+mod CourseEscrow {
+    use core::integer::u256;
+    use core::num::traits::Zero;
+    use starknet::storage::{
+        Map, StorageMapReadAccess, StorageMapWriteAccess, StoragePointerReadAccess,
+        StoragePointerWriteAccess,
+    };
+    use starknet::{ContractAddress, get_block_timestamp, get_caller_address};
+    use super::{ITokenContractDispatcher, ITokenContractDispatcherTrait};
+
+    // --- ESTRUCTURAS DE DATOS ---
+
+    #[derive(Drop, Serde, starknet::Store)]
+    struct Purchase {
+        buyer: ContractAddress,
+        owner: ContractAddress,
+        amount: u256,
+        expiration_time: u64,
+        settled: bool // Usamos 'settled' en lugar de released/refunded
+    }
+
+    // --- ALMACENAMIENTO ---
 
     #[storage]
     struct Storage {
-        balance: felt252,
+        purchases: Map<u128, Purchase>,
+        owner: ContractAddress,
+        token_contract_address: ContractAddress,
+        oracle_address: ContractAddress // Solo esta dirección puede llamar a fulfill_refund
     }
 
-    #[abi(embed_v0)]
-    impl HelloStarknetImpl of super::IHelloStarknet<ContractState> {
-        fn increase_balance(ref self: ContractState, amount: felt252) {
-            assert(amount != 0, 'Amount cannot be 0');
-            self.balance.write(self.balance.read() + amount);
-        }
+    // --- CONSTRUCTOR & CONFIGURACIÓN ---
 
-        fn get_balance(self: @ContractState) -> felt252 {
-            self.balance.read()
-        }
+    #[constructor]
+    fn constructor(
+        ref self: ContractState, token_addr: ContractAddress, initial_oracle_addr: ContractAddress,
+    ) {
+        self.owner.write(get_caller_address());
+        self.token_contract_address.write(token_addr);
+        self.oracle_address.write(initial_oracle_addr);
     }
 }
