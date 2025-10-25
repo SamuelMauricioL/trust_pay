@@ -1,7 +1,116 @@
-import React from 'react';
-import { Check, CreditCard, Smartphone, Wallet } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Check, CreditCard, Smartphone, Wallet, Loader2 } from 'lucide-react';
 
-function CheckoutForm({ paymentMethod, setPaymentMethod }) {
+function CheckoutForm({
+  paymentMethod,
+  setPaymentMethod,
+  walletConnected,
+  setWalletConnected,
+  walletAddress,
+  setWalletAddress
+}) {
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [starknetInstance, setStarknetInstance] = useState(null);
+  const [error, setError] = useState(null);
+  const [showWalletModal, setShowWalletModal] = useState(false);
+  const [availableWallets, setAvailableWallets] = useState([]);
+
+  // Detectar wallets disponibles
+  const detectWallets = () => {
+    const wallets = [];
+    const detectedIds = new Set();
+
+    // Braavo wallet
+    if (window.starknet_braavos) {
+      wallets.push({
+        id: 'braavos',
+        name: 'Braavo',
+        icon: 'https://raw.githubusercontent.com/myBraavos/braavos-assets/main/logo.svg',
+        instance: window.starknet_braavos
+      });
+      detectedIds.add('braavos');
+    }
+
+    // Wallet por defecto (window.starknet)
+    if (window.starknet) {
+      const walletId = window.starknet.id || 'default';
+
+      // Solo agregar si no es una de las que ya detectamos
+      if (!detectedIds.has(walletId)) {
+        wallets.push({
+          id: walletId,
+          name: window.starknet.name || 'Starknet Wallet',
+          icon: window.starknet.icon || 'https://play-lh.googleusercontent.com/HUk0fYbBtiJUFO1H_GCYq4p6kPxifsRP5vqHG96ZeK38-hepdPUU0GMprslWvItn3WUj',
+          instance: window.starknet
+        });
+      }
+    }
+
+    return wallets;
+  };
+
+  // Abrir modal de selección de wallet
+  const handleOpenWalletModal = () => {
+    const wallets = detectWallets();
+
+    if (wallets.length === 0) {
+      setError('No se detectó ninguna wallet Starknet. Instala Braavo o Argent X y recarga la página.');
+      return;
+    }
+
+    setAvailableWallets(wallets);
+    setShowWalletModal(true);
+  };
+
+  // Conectar con wallet específica
+  const connectWithWallet = async (wallet) => {
+    setIsConnecting(true);
+    setError(null);
+    setShowWalletModal(false);
+
+    try {
+      const starknet = wallet.instance;
+
+      console.log('Conectando con:', wallet.name, starknet);
+
+      // Solicitar conexión al usuario
+      const enableResult = await starknet.enable();
+
+      console.log('Resultado de enable:', enableResult);
+      console.log('isConnected:', starknet.isConnected);
+      console.log('selectedAddress:', starknet.selectedAddress);
+
+      // Verificar si se conectó
+      if (starknet.isConnected) {
+        const address = starknet.selectedAddress || starknet.account?.address || enableResult?.[0];
+        setStarknetInstance(starknet);
+        setWalletConnected(true);
+        setWalletAddress(address);
+      } else {
+        setError('No se pudo conectar la wallet. Intenta de nuevo.');
+      }
+    } catch (error) {
+      console.error('Error conectando wallet:', error);
+      setError(error.message || 'Error al conectar. El usuario canceló o hubo un problema.');
+    } finally {
+      setIsConnecting(false);
+    }
+  };
+
+  // Desconectar wallet
+  const handleDisconnectWallet = () => {
+    // Limpiar el estado local (get-starknet no tiene método disconnect)
+    setStarknetInstance(null);
+    setWalletConnected(false);
+    setWalletAddress('');
+    setError(null);
+  };
+
+  // Formatear dirección
+  const formatAddress = (address) => {
+    if (!address) return '';
+    return `${address.slice(0, 6)}...${address.slice(-4)}`;
+  };
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
       <h1 className="text-3xl font-bold mb-8">Verificar</h1>
@@ -56,20 +165,87 @@ function CheckoutForm({ paymentMethod, setPaymentMethod }) {
               }`}
             onClick={() => setPaymentMethod('wallet')}
           >
-            <div className="flex items-center gap-3">
-              <input
-                type="radio"
-                checked={paymentMethod === 'wallet'}
-                onChange={() => setPaymentMethod('wallet')}
-                className="w-4 h-4"
-              />
-              <img
-                src="https://play-lh.googleusercontent.com/HUk0fYbBtiJUFO1H_GCYq4p6kPxifsRP5vqHG96ZeK38-hepdPUU0GMprslWvItn3WUj"
-                alt="Wallet"
-                className="w-6 h-6"
-              />
-              <span className="font-medium">Conectar a wallet</span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <input
+                  type="radio"
+                  checked={paymentMethod === 'wallet'}
+                  onChange={() => setPaymentMethod('wallet')}
+                  className="w-4 h-4"
+                />
+                <img
+                  src="https://play-lh.googleusercontent.com/HUk0fYbBtiJUFO1H_GCYq4p6kPxifsRP5vqHG96ZeK38-hepdPUU0GMprslWvItn3WUj"
+                  alt="Wallet"
+                  className="w-6 h-6"
+                />
+                <span className="font-medium">Conectar a wallet</span>
+              </div>
+              {walletConnected && (
+                <span className="text-xs text-green-600 font-medium">
+                  ✓ Conectada
+                </span>
+              )}
             </div>
+
+            {paymentMethod === 'wallet' && (
+              <div className="mt-4 space-y-3">
+                {!walletConnected ? (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleOpenWalletModal();
+                      }}
+                      disabled={isConnecting}
+                      className="w-full bg-udemy-purple hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isConnecting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          <span>Conectando...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Wallet className="w-5 h-5" />
+                          <span>Seleccionar Wallet</span>
+                        </>
+                      )}
+                    </button>
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700">
+                        {error}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="space-y-3">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-xs text-gray-600 mb-1">Dirección de wallet</p>
+                          <p className="font-mono text-sm font-semibold text-gray-900">
+                            {formatAddress(walletAddress)}
+                          </p>
+                        </div>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDisconnectWallet();
+                          }}
+                          className="text-xs text-red-600 hover:text-red-700 font-medium"
+                        >
+                          Desconectar
+                        </button>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      <p>✓ Wallet lista para realizar el pago</p>
+                      <p className="mt-1">Se te solicitará confirmar la transacción en tu wallet.</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Tarjeta */}
@@ -206,6 +382,62 @@ function CheckoutForm({ paymentMethod, setPaymentMethod }) {
           </div>
         </div>
       </div>
+
+      {/* Modal de selección de wallet */}
+      {showWalletModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setShowWalletModal(false)}>
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold">Selecciona tu Wallet</h3>
+              <button
+                onClick={() => setShowWalletModal(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">
+              Elige la wallet con la que deseas conectarte
+            </p>
+
+            <div className="space-y-3">
+              {availableWallets.map((wallet) => (
+                <button
+                  key={wallet.id}
+                  onClick={() => connectWithWallet(wallet)}
+                  className="w-full flex items-center gap-4 p-4 border border-gray-300 rounded-lg hover:border-udemy-purple hover:bg-purple-50 transition-all"
+                >
+                  <img
+                    src={wallet.icon}
+                    alt={wallet.name}
+                    className="w-10 h-10 rounded-lg"
+                    onError={(e) => {
+                      e.target.src = 'https://play-lh.googleusercontent.com/HUk0fYbBtiJUFO1H_GCYq4p6kPxifsRP5vqHG96ZeK38-hepdPUU0GMprslWvItn3WUj';
+                    }}
+                  />
+                  <div className="flex-1 text-left">
+                    <p className="font-semibold text-gray-900">{wallet.name}</p>
+                    <p className="text-xs text-gray-500">Wallet Starknet</p>
+                  </div>
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ))}
+            </div>
+
+            {availableWallets.length === 0 && (
+              <div className="text-center py-8 text-gray-500">
+                <p>No se detectaron wallets instaladas</p>
+                <p className="text-sm mt-2">Instala Braavo o Argent X</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

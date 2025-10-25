@@ -5,6 +5,8 @@ import OrderSummary from './components/OrderSummary';
 
 function App() {
   const [paymentMethod, setPaymentMethod] = useState('wallet');
+  const [walletConnected, setWalletConnected] = useState(false);
+  const [walletAddress, setWalletAddress] = useState('');
 
   const courseData = {
     title: 'Curso intensivo para desarrolladores de blockchain de Ethereum con Solidity (2025)',
@@ -30,6 +32,10 @@ function App() {
             <CheckoutForm 
               paymentMethod={paymentMethod}
               setPaymentMethod={setPaymentMethod}
+              walletConnected={walletConnected}
+              setWalletConnected={setWalletConnected}
+              walletAddress={walletAddress}
+              setWalletAddress={setWalletAddress}
             />
           </div>
 
