@@ -4,7 +4,7 @@ function WalletButton({ wallet, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center gap-4 p-4 border border-gray-300 rounded-lg hover:border-udemy-purple hover:bg-purple-50 transition-all"
+      className="w-full flex items-center gap-4 p-4 border border-gray-300 rounded-lg hover:border-noudemy-purple hover:bg-purple-50 transition-all"
     >
       <img
         src={wallet.icon}

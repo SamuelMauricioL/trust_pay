@@ -105,7 +105,7 @@ function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
             </div>
           </div>
           <p className="text-xs text-gray-500 mt-2">
-            Udemy está obligado por ley a recaudar los impuestos de transacción aplicables sobre las compras realizadas en determinadas jurisdicciones fiscales.
+            NoUdemy está obligado por ley a recaudar los impuestos de transacción aplicables sobre las compras realizadas en determinadas jurisdicciones fiscales.
           </p>
         </div>
 

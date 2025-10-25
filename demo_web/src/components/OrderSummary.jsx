@@ -29,7 +29,7 @@ function OrderSummary({ course, total }) {
       </div>
 
       {/* Botón de pago */}
-      <button className="w-full bg-udemy-purple hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-lg transition-colors mb-4 flex items-center justify-center gap-2">
+      <button className="w-full bg-noudemy-purple hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-lg transition-colors mb-4 flex items-center justify-center gap-2">
         <Lock className="w-5 h-5" />
         Pagar S/{total.toFixed(2)}
       </button>
@@ -37,7 +37,7 @@ function OrderSummary({ course, total }) {
       {/* Términos */}
       <p className="text-xs text-gray-600 text-center mb-6">
         Al completar su compra, usted acepta todos los{' '}
-        <a href="#" className="text-udemy-purple hover:underline">Términos de uso</a>
+        <a href="#" className="text-noudemy-purple hover:underline">Términos de uso</a>
       </p>
 
       {/* Garantía */}

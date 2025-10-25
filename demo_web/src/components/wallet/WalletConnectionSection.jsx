@@ -103,7 +103,7 @@ function WalletConnectionSection({
           onConnect();
         }}
         disabled={isConnecting}
-        className="w-full bg-udemy-purple hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-noudemy-purple hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isConnecting ? (
           <>

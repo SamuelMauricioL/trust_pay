@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'udemy-purple': '#a435f0',
-        'udemy-dark': '#1c1d1f',
+        'noudemy-purple': '#a435f0',
+        'noudemy-dark': '#1c1d1f',
       }
     },
   },
