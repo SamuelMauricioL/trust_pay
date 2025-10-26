@@ -128,8 +128,8 @@ const pricingSection = `
                 </div>
 
                 <!-- Dispute Note -->
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-2 mb-3">
-                    <p class="text-xs text-blue-700">⚖️ <strong>+1.5% adicional</strong> solo si hay disputa</p>
+                <div class="mt-2 bg-blue-50 rounded px-2 py-1">
+                    <p class="text-xs text-blue-700">⚖️ +0.5% solo si hay disputa</p>
                 </div>
 
                 <!-- Benefit Badge -->
@@ -207,7 +207,7 @@ const pricingSection = `
                         <p class="text-sm font-bold text-blue-900">Costo de Gas en Starknet (STRK)</p>
                         <p class="text-xs text-blue-700 mt-1">
                             <strong>Gas:</strong> ~$0.22 (rango $0.19-$0.31) cobrado en token STRK. El costo varía según congestión de red.
-                            <br><strong>Disputa:</strong> +1.5% adicional para arbitraje con IA. Ejemplo: $10.22 → $25.22
+                            <br><strong>Disputa:</strong> +0.5% adicional para arbitraje con IA. Ejemplo: $10.22 → $15.22
                         </p>
                     </div>
                 </div>

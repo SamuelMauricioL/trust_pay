@@ -84,7 +84,7 @@ TrustPay utiliza la red Layer 2 de Starknet con su token nativo STRK para el gas
   - No depende del monto de la transacción
 
 **Fee Adicional por Disputa:**
-- **+1.5%** adicional SOLO si hay disputa y se requiere arbitraje con IA
+- **+0.5%** adicional SOLO si hay disputa y se requiere arbitraje con IA
 
 **Contexto Técnico Starknet:**
 - Precio actual STRK: ~$0.1246 USD
@@ -96,9 +96,9 @@ TrustPay utiliza la red Layer 2 de Starknet con su token nativo STRK para el gas
 
 | Monto | Sin Disputa | Con Disputa | vs Stripe (2.9%) | Ahorro |
 |-------|-------------|-------------|------------------|--------|
-| $100  | $1.22       | $2.72       | $3.20            | 62% / 15% |
-| $1,000| $10.22      | $25.22      | $29.30           | 65% / 14% |
-| $10,000| $100.22   | $250.22     | $290.30          | 65% / 14% |
+| $100  | $1.22       | $1.72       | $3.20            | 62% / 46% |
+| $1,000| $10.22      | $15.22      | $29.30           | 65% / 48% |
+| $10,000| $100.22   | $150.22     | $290.30          | 65% / 48% |
 
 ### Desglose por Transacción de $100
 
@@ -110,7 +110,7 @@ TrustPay utiliza la red Layer 2 de Starknet con su token nativo STRK para el gas
 
 - **Stripe:** 2.9% + $0.30 (siempre)
 - **PayPal:** 3.0% + $0.49 (siempre)
-- **TrustPay:** 1% + $0.22 gas (sin disputa) | 2.5% + $0.22 gas (con disputa)
+- **TrustPay:** 1% + $0.22 gas (sin disputa) | 1.5% + $0.22 gas (con disputa)
 
 **Ventajas:**
 1. Gas fijo independiente del monto (ventaja en transacciones grandes)

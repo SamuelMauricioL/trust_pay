@@ -19,7 +19,7 @@ function calculateFees(amount) {
     const trustpayFee = serviceFee + gasFeeAvg;
     
     // Fee adicional solo si hay disputa (incluye arbitraje con IA)
-    const disputeFee = amount * 0.015; // 1.5% adicional en caso de disputa
+    const disputeFee = amount * 0.005; // 0.5% adicional en caso de disputa
     const trustpayFeeWithDispute = trustpayFee + disputeFee;
     
     return {
@@ -170,7 +170,7 @@ function updateCalculator() {
                 
                 <!-- Dispute Note -->
                 <div class="mt-2 bg-blue-50 rounded px-2 py-1">
-                    <p class="text-xs text-blue-700">⚖️ +1.5% solo si hay disputa</p>
+                    <p class="text-xs text-blue-700">⚖️ +0.5% solo si hay disputa</p>
                 </div>
             </div>
         </div>

@@ -66,16 +66,16 @@ Costo Total = (Monto × 1%) + $0.22
 
 ### 4. Fee Adicional por Disputa
 ```
-+1.5% del monto (solo si hay disputa con arbitraje IA)
++0.5% del monto (solo si hay disputa con arbitraje IA)
 ```
 
 **Ejemplos con Disputa:**
 
 | Monto    | Base    | +Disputa | Total Con Disputa |
 |----------|---------|----------|-------------------|
-| $100     | $1.22   | $1.50    | $2.72             |
-| $1,000   | $10.22  | $15.00   | $25.22            |
-| $10,000  | $100.22 | $150.00  | $250.22           |
+| $100     | $1.22   | $0.50    | $1.72             |
+| $1,000   | $10.22  | $5.00    | $15.22            |
+| $10,000  | $100.22 | $50.00   | $150.22           |
 
 ## 📈 Comparación con Competencia
 
@@ -92,7 +92,7 @@ Costo Total = (Monto × 1%) + $0.22
 ### TrustPay
 ```
 Sin disputa: 1% + $0.22 gas
-Con disputa: 2.5% + $0.22 gas
+Con disputa: 1.5% + $0.22 gas
 ```
 
 ## 💡 Ventajas del Modelo
@@ -105,8 +105,8 @@ Con disputa: 2.5% + $0.22 gas
 
 ### 2. Incentivo a Resolver sin Disputa
 - Transacción normal: 1% + $0.22
-- Con disputa: 2.5% + $0.22
-- Diferencia: +1.5% del monto
+- Con disputa: 1.5% + $0.22
+- Diferencia: +0.5% del monto
 
 ### 3. Transparencia On-Chain
 - Todo registrado en Starknet
@@ -147,7 +147,7 @@ const GAS_FEE_MAX = 0.31;
 const SERVICE_FEE_PERCENT = 0.01; // 1%
 
 // Fee de disputa
-const DISPUTE_FEE_PERCENT = 0.015; // 1.5%
+const DISPUTE_FEE_PERCENT = 0.005; // 0.5%
 ```
 
 ## 📝 Notas Importantes
