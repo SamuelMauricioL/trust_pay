@@ -5,12 +5,20 @@ function calculateFees(amount) {
     const stripeFee = (amount * 0.029) + 0.30;
     const paypalFee = (amount * 0.03) + 0.49;
     
-    // TrustPay (Starknet) - Gas Fee de Arbitraje (0.5% - 1.5%) + network fee
-    const networkFee = 0.05; // Average network fee between $0.01 and $0.10
-    const gasFeeArbitrage = amount * 0.01; // Average 1% (between 0.5% - 1.5%)
-    const trustpayFee = gasFeeArbitrage + networkFee;
+    // TrustPay (Starknet)
+    // 1% de servicio + gas fee de Starknet
+    const serviceFee = amount * 0.01; // 1% para TrustPay
     
-    // Fee adicional solo si hay disputa
+    // Gas fee en Starknet (estimado conservador para contrato con lógica 3x más compleja)
+    // 0.119 STRK x 3 = 0.357 STRK ≈ 0.045 USD
+    // Rango real: 0.19 - 0.31 USD dependiendo de congestión
+    const gasFeeMin = 0.19; // Mínimo en red normal
+    const gasFeeMax = 0.31; // Máximo en red congestionada
+    const gasFeeAvg = 0.22;  // Promedio estimado
+    
+    const trustpayFee = serviceFee + gasFeeAvg;
+    
+    // Fee adicional solo si hay disputa (incluye arbitraje con IA)
     const disputeFee = amount * 0.015; // 1.5% adicional en caso de disputa
     const trustpayFeeWithDispute = trustpayFee + disputeFee;
     
@@ -19,8 +27,10 @@ function calculateFees(amount) {
         paypal: paypalFee,
         trustpay: trustpayFee,
         trustpayWithDispute: trustpayFeeWithDispute,
-        networkFee: networkFee,
-        gasFeeArbitrage: gasFeeArbitrage,
+        serviceFee: serviceFee,
+        gasFee: gasFeeAvg,
+        gasFeeMin: gasFeeMin,
+        gasFeeMax: gasFeeMax,
         disputeFee: disputeFee,
         stripeSavings: stripeFee - trustpayFee,
         paypalSavings: paypalFee - trustpayFee
@@ -149,7 +159,7 @@ function updateCalculator() {
                 
                 <div class="mb-2">
                     <p class="text-2xl font-bold text-green-600 mb-0.5">$${fees.trustpay.toFixed(2)}</p>
-                    <p class="text-xs text-gray-600">~1% Gas + $${fees.networkFee.toFixed(2)} red</p>
+                    <p class="text-xs text-gray-600">1% servicio + $${fees.gasFee.toFixed(2)} gas STRK</p>
                 </div>
                 
                 <!-- Progress Bar -->

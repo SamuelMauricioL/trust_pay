@@ -16,7 +16,7 @@ const pricingSection = `
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                 Los métodos tradicionales te cobran <strong>hasta 66% más</strong>. 
-                Con TrustPay y el <strong>Gas Fee de Arbitraje</strong>, tu dinero se queda donde debe: <strong>contigo</strong> 💰
+                Con TrustPay y el <strong>bajo gas de Starknet (STRK)</strong>, tu dinero se queda donde debe: <strong>contigo</strong> 💰
             </p>
         </div>
 
@@ -116,15 +116,15 @@ const pricingSection = `
 
                 <!-- Fee -->
                 <div class="mb-4">
-                    <p class="text-3xl font-black text-green-600 mb-1">~1% + $0.05</p>
-                    <p class="text-sm text-gray-700">Gas Fee de Arbitraje (0.5%-1.5%)</p>
+                    <p class="text-3xl font-black text-green-600 mb-1">1% + $0.19-0.31</p>
+                    <p class="text-sm text-gray-700">Servicio + Gas STRK (promedio $0.22)</p>
                 </div>
 
                 <!-- Example -->
                 <div class="bg-green-100 rounded-lg p-3 mb-3">
                     <p class="text-xs text-gray-700 mb-1">💡 Ejemplo en $1,000:</p>
-                    <p class="text-lg font-bold text-green-600">Pagas $10.05</p>
-                    <p class="text-xs text-gray-500 mt-1">Sin disputa</p>
+                    <p class="text-lg font-bold text-green-600">Pagas $10.22</p>
+                    <p class="text-xs text-gray-500 mt-1">1% servicio + $0.22 gas</p>
                 </div>
 
                 <!-- Dispute Note -->
@@ -177,11 +177,11 @@ const pricingSection = `
                 <div>
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-sm font-semibold text-gray-700">TrustPay (sin disputa)</span>
-                        <span class="text-sm font-bold text-green-600">$10.05</span>
+                        <span class="text-sm font-bold text-green-600">$10.22</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-8 relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="width: 10%">
-                            ~1%
+                            1% + gas
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ const pricingSection = `
                     <span class="text-3xl">💰</span>
                     <div class="text-center">
                         <p class="text-sm text-gray-700">Ahorras con TrustPay</p>
-                        <p class="text-3xl font-black text-orange-600">$19.25 - $20.44</p>
+                        <p class="text-3xl font-black text-orange-600">$19.08 - $20.27</p>
                         <p class="text-xs text-gray-600">Por cada $1,000 sin disputa (hasta 66% menos)</p>
                     </div>
                 </div>
@@ -204,10 +204,10 @@ const pricingSection = `
                 <div class="flex items-center gap-3">
                     <span class="text-2xl">⚖️</span>
                     <div>
-                        <p class="text-sm font-bold text-blue-900">Gas Fee de Arbitraje con IA</p>
+                        <p class="text-sm font-bold text-blue-900">Costo de Gas en Starknet (STRK)</p>
                         <p class="text-xs text-blue-700 mt-1">
-                            Si hay disputa, se aplica un <strong>1.5% adicional</strong> para cubrir el costo del arbitraje con IA.
-                            En el ejemplo: $10.05 → $25.05 (aún 15-20% más barato)
+                            <strong>Gas:</strong> ~$0.22 (rango $0.19-$0.31) cobrado en token STRK. El costo varía según congestión de red.
+                            <br><strong>Disputa:</strong> +1.5% adicional para arbitraje con IA. Ejemplo: $10.22 → $25.22
                         </p>
                     </div>
                 </div>

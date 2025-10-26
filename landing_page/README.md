@@ -73,32 +73,50 @@ Nueva calculadora interactiva con:
 
 ## 💰 Modelo de Monetización
 
-### Gas Fee de Arbitraje
-TrustPay utiliza un modelo de tarifas innovador:
+### Tarifas TrustPay en Starknet
+TrustPay utiliza la red Layer 2 de Starknet con su token nativo STRK para el gas:
 
-**Tarifa Base:**
-- **0.5% - 1.5%** Gas Fee de Arbitraje (promedio ~1%)
-- **$0.05** fee de red (promedio entre $0.01 - $0.10)
+**Tarifa Base (Sin Disputa):**
+- **1%** del monto de transacción (ingreso TrustPay)
+- **$0.19 - $0.31** gas en STRK (promedio ~$0.22)
+  - Cobrado en token STRK al momento de la transacción
+  - Varía según congestión de la red
+  - No depende del monto de la transacción
 
 **Fee Adicional por Disputa:**
 - **+1.5%** adicional SOLO si hay disputa y se requiere arbitraje con IA
-- Sin disputa: La tarifa se mantiene en ~1% + fee de red
+
+**Contexto Técnico Starknet:**
+- Precio actual STRK: ~$0.1246 USD
+- Precio promedio gas: 4.5928 Gwei
+- Estimación conservadora: 3x el costo de transferencia simple
+- Costo por operación de contrato: ~0.357 STRK ≈ $0.045 USD
 
 **Ejemplos:**
 
-| Monto | Sin Disputa | Con Disputa | vs Stripe (2.9%) |
-|-------|-------------|-------------|------------------|
-| $100  | $1.05       | $2.55       | Ahorro: 67% / 20% |
-| $1,000| $10.05      | $25.05      | Ahorro: 66% / 15% |
-| $10,000| $100.05   | $250.05     | Ahorro: 66% / 14% |
+| Monto | Sin Disputa | Con Disputa | vs Stripe (2.9%) | Ahorro |
+|-------|-------------|-------------|------------------|--------|
+| $100  | $1.22       | $2.72       | $3.20            | 62% / 15% |
+| $1,000| $10.22      | $25.22      | $29.30           | 65% / 14% |
+| $10,000| $100.22   | $250.22     | $290.30          | 65% / 14% |
+
+### Desglose por Transacción de $100
+
+**Ingreso TrustPay:** $1.00 (1%) = 7.94 STRK  
+**Costo Gas Validadores:** $0.22 (promedio) = ~0.36 STRK  
+**Costo Total Cliente:** $1.22 = 8.30 STRK
 
 ### Comparación con Competencia
 
 - **Stripe:** 2.9% + $0.30 (siempre)
 - **PayPal:** 3.0% + $0.49 (siempre)
-- **TrustPay:** ~1% + $0.05 (sin disputa) | 2.5% + $0.05 (con disputa)
+- **TrustPay:** 1% + $0.22 gas (sin disputa) | 2.5% + $0.22 gas (con disputa)
 
-**Ventaja:** Incentiva resolver sin disputas, reduciendo costos para todos.
+**Ventajas:**
+1. Gas fijo independiente del monto (ventaja en transacciones grandes)
+2. Incentiva resolver sin disputas
+3. 62-65% más barato que procesadores tradicionales
+4. Transparencia total on-chain en Starknet
 
 ## 📁 Estructura de Archivos
 
