@@ -83,16 +83,69 @@ const pricingSection = `
         </div>
 
         <!-- Savings Calculator -->
-        <div class="mt-16 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-100">
-            <h3 class="text-2xl font-bold text-center mb-6">Calculadora de Ahorros</h3>
-            <div class="max-w-2xl mx-auto">
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Monto de la Transacción (USD)</label>
-                    <input type="number" id="amount" value="100" min="1" 
-                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg">
+        <div class="mt-16 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-100 via-indigo-100 to-pink-100 opacity-50 blur-3xl"></div>
+            <div class="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-2 border-purple-200 shadow-2xl">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        🧮 Calculadora Interactiva
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">¿Cuánto Ahorrarás?</h3>
+                    <p class="text-gray-600">Ingresa el monto de tu transacción y descubre el ahorro instantáneo</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-6" id="savings-result">
-                    <!-- Populated by calculator.js -->
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- Input Section -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
+                            <span class="text-2xl">💰</span>
+                            Monto de la Transacción
+                        </label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-bold text-gray-500">$</span>
+                            <input type="number" 
+                                   id="amount" 
+                                   value="100" 
+                                   min="1" 
+                                   max="100000"
+                                   step="10"
+                                   class="w-full pl-12 pr-4 py-4 border-2 border-purple-200 rounded-xl focus:ring-4 focus:ring-purple-200 focus:border-purple-400 text-2xl font-bold text-gray-800 transition-all duration-300 bg-white shadow-lg"
+                                   placeholder="100">
+                        </div>
+                        
+                        <!-- Quick Amount Buttons -->
+                        <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                            <button onclick="document.getElementById('amount').value=50; document.getElementById('amount').dispatchEvent(new Event('input'))" 
+                                    class="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                $50
+                            </button>
+                            <button onclick="document.getElementById('amount').value=100; document.getElementById('amount').dispatchEvent(new Event('input'))" 
+                                    class="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                $100
+                            </button>
+                            <button onclick="document.getElementById('amount').value=500; document.getElementById('amount').dispatchEvent(new Event('input'))" 
+                                    class="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                $500
+                            </button>
+                            <button onclick="document.getElementById('amount').value=1000; document.getElementById('amount').dispatchEvent(new Event('input'))" 
+                                    class="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                $1,000
+                            </button>
+                            <button onclick="document.getElementById('amount').value=5000; document.getElementById('amount').dispatchEvent(new Event('input'))" 
+                                    class="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                $5,000
+                            </button>
+                            <button onclick="document.getElementById('amount').value=10000; document.getElementById('amount').dispatchEvent(new Event('input'))" 
+                                    class="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                $10,000
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Container -->
+                    <div class="grid md:grid-cols-3 gap-6" id="savings-result">
+                        <!-- Populated by calculator.js -->
+                    </div>
                 </div>
             </div>
         </div>

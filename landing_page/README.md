@@ -47,6 +47,20 @@ Cada tarjeta ahora incluye:
 - **Hover effects** - Emoji rota, flecha aparece, borde brilla
 - **Shimmer animado** - Efecto de brillo en el header
 
+### 🧮 Calculadora de Ahorros Mejorada
+Nueva calculadora interactiva con:
+- **Emojis expresivos dinámicos** - 😱 😓 🚀 🤑 💰 🎉 según el ahorro
+- **Badges contextuales** - "Costoso", "Muy caro", "Mejor precio"
+- **Barras de progreso visuales** - Comparación visual de tarifas
+- **Banner de ahorro gigante** - Con gradiente animado y emoji bounce
+- **Ejemplos de uso real** - Muestra casos según el monto ingresado
+- **Comparación de dinero recibido** - Cuánto recibes después de tarifas
+- **Estadísticas adicionales** - Cuántas veces más barato, ahorro anual, % reducción
+- **Botones de montos rápidos** - $50, $100, $500, $1K, $5K, $10K
+- **Input mejorado** - Más grande, símbolo $ visible, focus animado
+- **Glassmorphism** - Fondo con blur y efectos modernos
+- **Transiciones suaves** - Todo anima con duración de 300-1000ms
+
 ## 🎯 Características del Sitio
 
 - **Hero Section**: Propuesta de valor principal con ahorro del 99%
