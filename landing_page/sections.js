@@ -1,85 +1,197 @@
 // HTML sections for the landing page
 
 const pricingSection = `
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Por Qué Pagar Más?</h2>
+<section class="py-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-12">
+            <div class="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                💸 Comparativa de Precios
+            </div>
+            <h2 class="text-5xl font-black text-gray-900 mb-4">
+                ¿Por Qué Pagar <span class="text-red-600">Más</span>?
+            </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Compara las tarifas de los métodos tradicionales con TrustPay. 
-                El costo no escala con el monto de la transacción.
+                Los métodos tradicionales te cobran <strong>hasta 98% más</strong>. 
+                Con TrustPay, tu dinero se queda donde debe: <strong>contigo</strong> 💰
             </p>
         </div>
 
-        <div class="overflow-x-auto">
-            <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                <thead class="gradient-bg text-white">
-                    <tr>
-                        <th class="px-6 py-4 text-left text-sm font-semibold">Método de Pago</th>
-                        <th class="px-6 py-4 text-left text-sm font-semibold">Tipo de Tarifa</th>
-                        <th class="px-6 py-4 text-left text-sm font-semibold">Tarifa por Transacción</th>
-                        <th class="px-6 py-4 text-left text-sm font-semibold">¿Escala con el Valor?</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200">
-                    <tr class="hover:bg-red-50 transition">
-                        <td class="px-6 py-4">
-                            <div class="flex items-center gap-3">
-                                <i class="fab fa-cc-stripe text-2xl text-blue-600"></i>
-                                <span class="font-semibold">Tarjetas / Stripe</span>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 text-gray-600">Porcentual + Fija</td>
-                        <td class="px-6 py-4">
-                            <span class="text-xl font-bold text-red-600">2.9% + $0.30</span>
-                        </td>
-                        <td class="px-6 py-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
-                                <i class="fas fa-arrow-up mr-2"></i>
-                                Sí (Aumenta)
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-red-50 transition">
-                        <td class="px-6 py-4">
-                            <div class="flex items-center gap-3">
-                                <i class="fab fa-paypal text-2xl text-blue-700"></i>
-                                <span class="font-semibold">PayPal</span>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 text-gray-600">Porcentual + Fija</td>
-                        <td class="px-6 py-4">
-                            <span class="text-xl font-bold text-red-600">~3.0% + $0.49</span>
-                        </td>
-                        <td class="px-6 py-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
-                                <i class="fas fa-arrow-up mr-2"></i>
-                                Sí (Aumenta)
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-green-50 transition bg-green-50/50">
-                        <td class="px-6 py-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center">
-                                    <i class="fas fa-bolt text-white text-sm"></i>
-                                </div>
-                                <span class="font-bold text-primary">TrustPay (Starknet L2)</span>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 text-gray-600">Tarifa de Red (Gas)</td>
-                        <td class="px-6 py-4">
-                            <span class="text-xl font-bold text-green-600">$0.01 - $0.10</span>
-                        </td>
-                        <td class="px-6 py-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                                <i class="fas fa-check mr-2"></i>
-                                No (Independiente)
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Comparison Cards (Mobile & Desktop) -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- Stripe Card -->
+            <div class="group bg-white rounded-2xl p-6 shadow-xl border-2 border-red-200 hover:border-red-300 transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-0 right-0 text-6xl opacity-5">😱</div>
+                
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-stripe text-2xl text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Stripe</p>
+                            <p class="text-xs text-gray-500">Tarjetas de crédito</p>
+                        </div>
+                    </div>
+                    <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">Costoso</span>
+                </div>
+
+                <!-- Fee -->
+                <div class="mb-4">
+                    <p class="text-3xl font-black text-red-600 mb-1">2.9% + $0.30</p>
+                    <p class="text-sm text-gray-600">Por cada transacción</p>
+                </div>
+
+                <!-- Example -->
+                <div class="bg-red-50 rounded-lg p-3 mb-4">
+                    <p class="text-xs text-gray-700 mb-1">💡 Ejemplo en $1,000:</p>
+                    <p class="text-lg font-bold text-red-600">Pagas $29.30</p>
+                </div>
+
+                <!-- Problem Badge -->
+                <div class="flex items-center gap-2 text-xs">
+                    <i class="fas fa-arrow-trend-up text-red-500"></i>
+                    <span class="text-red-700 font-medium">El costo aumenta con el monto</span>
+                </div>
+            </div>
+
+            <!-- PayPal Card -->
+            <div class="group bg-white rounded-2xl p-6 shadow-xl border-2 border-red-200 hover:border-red-300 transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-0 right-0 text-6xl opacity-5">😓</div>
+                
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-paypal text-2xl text-blue-700"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">PayPal</p>
+                            <p class="text-xs text-gray-500">Wallet digital</p>
+                        </div>
+                    </div>
+                    <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Muy caro</span>
+                </div>
+
+                <!-- Fee -->
+                <div class="mb-4">
+                    <p class="text-3xl font-black text-red-600 mb-1">3.0% + $0.49</p>
+                    <p class="text-sm text-gray-600">Por cada transacción</p>
+                </div>
+
+                <!-- Example -->
+                <div class="bg-red-50 rounded-lg p-3 mb-4">
+                    <p class="text-xs text-gray-700 mb-1">💡 Ejemplo en $1,000:</p>
+                    <p class="text-lg font-bold text-red-600">Pagas $30.49</p>
+                </div>
+
+                <!-- Problem Badge -->
+                <div class="flex items-center gap-2 text-xs">
+                    <i class="fas fa-arrow-trend-up text-red-500"></i>
+                    <span class="text-red-700 font-medium">Peor que Stripe en tarifas</span>
+                </div>
+            </div>
+
+            <!-- TrustPay Card -->
+            <div class="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-2xl border-2 border-green-400 hover:border-green-500 transition-all duration-300 relative overflow-hidden transform hover:scale-105">
+                <div class="absolute top-0 right-0 text-6xl opacity-10">🚀</div>
+                
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">TrustPay</p>
+                            <p class="text-xs text-green-700">Starknet L2</p>
+                        </div>
+                    </div>
+                    <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">Mejor!</span>
+                </div>
+
+                <!-- Fee -->
+                <div class="mb-4">
+                    <p class="text-3xl font-black text-green-600 mb-1">$0.01 - $0.10</p>
+                    <p class="text-sm text-gray-700">Tarifa fija de red</p>
+                </div>
+
+                <!-- Example -->
+                <div class="bg-green-100 rounded-lg p-3 mb-4">
+                    <p class="text-xs text-gray-700 mb-1">💡 Ejemplo en $1,000:</p>
+                    <p class="text-lg font-bold text-green-600">Pagas $0.05</p>
+                </div>
+
+                <!-- Benefit Badge -->
+                <div class="flex items-center gap-2 text-xs">
+                    <i class="fas fa-check-circle text-green-500"></i>
+                    <span class="text-green-700 font-bold">No importa el monto! 🎯</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Comparison Bar -->
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 mb-12">
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-6">
+                Comparación Visual: Transacción de $1,000
+            </h3>
+            
+            <div class="space-y-4">
+                <!-- Stripe Bar -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-700">Stripe</span>
+                        <span class="text-sm font-bold text-red-600">$29.30</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-8 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 h-8 rounded-full flex items-center justify-end pr-3 text-white text-xs font-bold" style="width: 29.3%">
+                            2.9%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PayPal Bar -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-700">PayPal</span>
+                        <span class="text-sm font-bold text-red-600">$30.49</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-8 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-red-700 h-8 rounded-full flex items-center justify-end pr-3 text-white text-xs font-bold" style="width: 30.5%">
+                            3.0%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TrustPay Bar -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-700">TrustPay</span>
+                        <span class="text-sm font-bold text-green-600">$0.05</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-8 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="width: 0.5%">
+                            🎉
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savings Highlight -->
+            <div class="mt-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border-2 border-yellow-200">
+                <div class="flex items-center justify-center gap-3">
+                    <span class="text-3xl">💰</span>
+                    <div class="text-center">
+                        <p class="text-sm text-gray-700">Ahorras con TrustPay</p>
+                        <p class="text-3xl font-black text-orange-600">$29.25 - $30.44</p>
+                        <p class="text-xs text-gray-600">Por cada $1,000 transaccionados</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Savings Calculator -->
