@@ -1,8 +1,53 @@
-# TrustPay Landing Page
+# TrustPay Landing Page - Versión Moderna 2.0
 
-Landing page moderna para TrustPay - Plataforma de pagos seguros con blockchain, smart contracts de escrow y arbitraje con IA.
+Landing page ultra-moderna para TrustPay - Plataforma de pagos seguros con blockchain, smart contracts de escrow y arbitraje con IA.
 
-## 🎯 Características
+## ✨ Efectos Modernos Implementados
+
+### 🎨 Visuales
+- **Glassmorphism** - Efectos de vidrio esmerilado en tarjetas
+- **Gradientes animados** - Fondos con movimiento fluido
+- **Grid animado** - Patrón de cuadrícula en movimiento
+- **Partículas flotantes** - 50 partículas animadas en el hero
+- **Neon glow** - Efecto de brillo neón en texto importante
+- **Shadows dinámicos** - Sombras que reaccionan al hover
+
+### 🚀 Animaciones
+- **Fade-in escalonado** - Elementos aparecen con delay
+- **Hover 3D** - Tarjetas con efecto de profundidad
+- **Float animation** - Elementos flotantes suaves
+- **Mouse tracking** - Tarjetas siguen el cursor
+- **Button glow** - Botones con efecto de onda al hover
+- **Smooth transitions** - Transiciones suaves en todo
+
+### 🎯 Interacciones
+- **Cursor glow** - Halo que sigue el cursor
+- **Scroll animations** - Elementos aparecen al scrollear
+- **Number counters** - Números se animan al aparecer
+- **Parallax effect** - Profundidad en el scroll
+- **Smooth scroll** - Navegación fluida
+
+### 🏷️ Badges Tech
+Cada característica ahora tiene un badge que identifica la tecnología:
+- 🔷 **Blockchain** - Smart Contract Escrow
+- 🤖 **AI Powered** - Arbitraje con IA
+- 🟢 **Layer 2** - Costos Predecibles
+- ⚡ **Starknet** - Transacciones Instantáneas
+- 🌐 **Web3** - Global y Sin Fronteras
+- 💻 **Developer Friendly** - Fácil Integración
+
+### 🎴 Tarjetas de Casos de Uso Mejoradas
+Cada tarjeta ahora incluye:
+- **Emojis expresivos** - Dan personalidad única a cada caso
+- **Badges de categoría** - Más Popular, Tech, Real Estate, EdTech, Startup, B2B
+- **Estadísticas reales** - Montos promedio, tasas de éxito
+- **Ejemplos de ahorro** - Ahorro específico en tarifas
+- **Gradientes únicos** - Color scheme personalizado por tarjeta
+- **Tags de ejemplos** - Casos de uso específicos
+- **Hover effects** - Emoji rota, flecha aparece, borde brilla
+- **Shimmer animado** - Efecto de brillo en el header
+
+## 🎯 Características del Sitio
 
 - **Hero Section**: Propuesta de valor principal con ahorro del 99%
 - **Tabla Comparativa**: Comparación de tarifas vs Stripe/PayPal
@@ -16,12 +61,24 @@ Landing page moderna para TrustPay - Plataforma de pagos seguros con blockchain,
 
 ```
 landing_page/
-├── index.html          # Página principal
-├── styles.css          # Estilos personalizados
+├── index.html          # Página principal con Hero y navegación
+├── styles.css          # Estilos modernos con animaciones y efectos
 ├── sections.js         # Secciones HTML (pricing, features, use cases, AI)
-├── calculator.js       # Calculadora de ahorros
+├── calculator.js       # Calculadora interactiva de ahorros
+├── animations.js       # Efectos JavaScript modernos (NEW!)
 └── README.md          # Esta documentación
 ```
+
+### 🆕 Nuevo: animations.js
+
+Archivo JavaScript que agrega:
+- Partículas flotantes en el hero
+- Scroll animations con Intersection Observer
+- Mouse tracking en tarjetas
+- Cursor glow effect
+- Parallax scrolling
+- Counter animations
+- Smooth scroll mejorado
 
 ## 🚀 Cómo Usar
 

@@ -109,9 +109,13 @@ const featuresSection = `
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 w-32 h-32 rounded-full -mr-16 -mt-16"></div>
+                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 relative shadow-lg">
                     <i class="fas fa-shield-halved text-white text-2xl"></i>
+                </div>
+                <div class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    Blockchain
                 </div>
                 <h3 class="text-xl font-bold mb-4">Smart Contract Escrow</h3>
                 <p class="text-gray-600">
@@ -120,9 +124,13 @@ const featuresSection = `
                 </p>
             </div>
 
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 w-32 h-32 rounded-full -mr-16 -mt-16"></div>
+                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 relative shadow-lg">
                     <i class="fas fa-robot text-white text-2xl"></i>
+                </div>
+                <div class="inline-block bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    AI Powered
                 </div>
                 <h3 class="text-xl font-bold mb-4">Arbitraje con IA</h3>
                 <p class="text-gray-600">
@@ -131,9 +139,13 @@ const featuresSection = `
                 </p>
             </div>
 
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 w-32 h-32 rounded-full -mr-16 -mt-16"></div>
+                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 relative shadow-lg">
                     <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <div class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    Layer 2
                 </div>
                 <h3 class="text-xl font-bold mb-4">Costos Predecibles</h3>
                 <p class="text-gray-600">
@@ -141,9 +153,13 @@ const featuresSection = `
                 </p>
             </div>
 
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 w-32 h-32 rounded-full -mr-16 -mt-16"></div>
+                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 relative shadow-lg">
                     <i class="fas fa-clock text-white text-2xl"></i>
+                </div>
+                <div class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    Starknet
                 </div>
                 <h3 class="text-xl font-bold mb-4">Transacciones Instantáneas</h3>
                 <p class="text-gray-600">
@@ -151,9 +167,13 @@ const featuresSection = `
                 </p>
             </div>
 
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 w-32 h-32 rounded-full -mr-16 -mt-16"></div>
+                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 relative shadow-lg">
                     <i class="fas fa-globe text-white text-2xl"></i>
+                </div>
+                <div class="inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    Web3
                 </div>
                 <h3 class="text-xl font-bold mb-4">Global y Sin Fronteras</h3>
                 <p class="text-gray-600">
@@ -161,9 +181,13 @@ const featuresSection = `
                 </p>
             </div>
 
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-indigo-500/10 to-violet-500/10 w-32 h-32 rounded-full -mr-16 -mt-16"></div>
+                <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 relative shadow-lg">
                     <i class="fas fa-code text-white text-2xl"></i>
+                </div>
+                <div class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                    Developer Friendly
                 </div>
                 <h3 class="text-xl font-bold mb-4">Fácil Integración</h3>
                 <p class="text-gray-600">
@@ -380,90 +404,207 @@ function getUseCaseCards() {
     const useCases = [
         {
             color: 'blue',
+            gradient: 'from-blue-500 via-cyan-500 to-blue-600',
             icon: 'laptop-code',
+            emoji: '💻',
+            badge: 'Más Popular',
+            badgeColor: 'bg-blue-500',
             title: 'Servicios Freelance',
-            description: 'Desarrollo web, traducción, diseño, marketing digital. Pagos por hitos con liberación automática.',
+            subtitle: 'Desarrollo, Diseño & Marketing',
+            description: 'Proyectos por hitos con liberación automática. Protección total para freelancers y clientes.',
+            stat: '$5,000',
+            statLabel: 'Proyecto promedio',
+            savingExample: 'Ahorra $145 en tarifas por proyecto',
             features: [
-                'Pago por milestones completados',
-                'Verificación de entregables',
-                'Protección para ambas partes'
-            ]
+                { icon: '🎯', text: 'Pago por milestones completados' },
+                { icon: '✅', text: 'Verificación automática de entregables' },
+                { icon: '🛡️', text: 'Protección para ambas partes' }
+            ],
+            examples: ['Desarrollo Web', 'UX/UI Design', 'Marketing Digital']
         },
         {
             color: 'purple',
+            gradient: 'from-purple-500 via-fuchsia-500 to-purple-600',
             icon: 'key',
+            emoji: '🔑',
+            badge: 'Tech',
+            badgeColor: 'bg-purple-500',
             title: 'Activos Digitales',
-            description: 'Venta de software, licencias, NFTs, stock media. Entrega automática tras verificación de pago.',
+            subtitle: 'Software, NFTs & Licencias',
+            description: 'Venta segura de activos digitales con entrega automática y verificación on-chain.',
+            stat: '100%',
+            statLabel: 'Seguridad garantizada',
+            savingExample: 'Sin intermediarios, 0% comisión',
             features: [
-                'Licencias de software seguras',
-                'Transferencia automática de claves',
-                'Verificación de autenticidad'
-            ]
+                { icon: '🔐', text: 'Licencias de software verificadas' },
+                { icon: '⚡', text: 'Transferencia instantánea' },
+                { icon: '🎨', text: 'NFTs y arte digital' }
+            ],
+            examples: ['Software Licenses', 'NFT Sales', 'Digital Art']
         },
         {
             color: 'green',
+            gradient: 'from-green-500 via-emerald-500 to-green-600',
             icon: 'home',
+            emoji: '🏠',
+            badge: 'Real Estate',
+            badgeColor: 'bg-green-500',
             title: 'Arrendamiento',
-            description: 'Depósitos de garantía, alquiler de equipos. Devolución automática al cumplir condiciones.',
+            subtitle: 'Propiedades & Equipos',
+            description: 'Depósitos de garantía en smart contracts. Devolución automática sin disputas.',
+            stat: '$1,200',
+            statLabel: 'Depósito promedio',
+            savingExample: 'Recupera tu depósito en 24h',
             features: [
-                'Depósitos sin disputas',
-                'Devolución automática',
-                'Verificación de estado'
-            ]
+                { icon: '💰', text: 'Depósitos sin retención injusta' },
+                { icon: '🤖', text: 'Devolución 100% automática' },
+                { icon: '📸', text: 'Verificación con evidencia' }
+            ],
+            examples: ['Apartamentos', 'Oficinas', 'Equipos']
         },
         {
             color: 'orange',
+            gradient: 'from-orange-500 via-amber-500 to-orange-600',
             icon: 'graduation-cap',
+            emoji: '🎓',
+            badge: 'EdTech',
+            badgeColor: 'bg-orange-500',
             title: 'Educación',
-            description: 'Cursos online con garantía de finalización. Pago al instructor tras completar el contenido.',
+            subtitle: 'Cursos Online & Mentorías',
+            description: 'Garantía de finalización. El instructor recibe el pago tras tu aprobación del curso.',
+            stat: '95%',
+            statLabel: 'Tasa de finalización',
+            savingExample: 'Reembolso si no completas',
             features: [
-                'Garantía de finalización',
-                'Incentivo de calidad',
-                'Mentoreo P2P seguro'
-            ]
+                { icon: '📚', text: 'Garantía de finalización del curso' },
+                { icon: '👨‍🏫', text: 'Pago al instructor tras aprobación' },
+                { icon: '🎯', text: 'Mentorías P2P seguras' }
+            ],
+            examples: ['Cursos Online', 'Bootcamps', 'Mentorías 1:1']
         },
         {
             color: 'pink',
+            gradient: 'from-pink-500 via-rose-500 to-pink-600',
             icon: 'hand-holding-heart',
+            emoji: '🚀',
+            badge: 'Startup',
+            badgeColor: 'bg-pink-500',
             title: 'Crowdfunding',
-            description: 'Financiamiento por hitos. Fondos liberados al alcanzar objetivos verificables.',
+            subtitle: 'Financiamiento por Hitos',
+            description: 'Fondos liberados al alcanzar objetivos. Protección total para inversores y creadores.',
+            stat: '$50K',
+            statLabel: 'Promedio recaudado',
+            savingExample: 'Inversores protegidos 100%',
             features: [
-                'Liberación por milestones',
-                'Protección a inversores',
-                'Subvenciones basadas en resultados'
-            ]
+                { icon: '🎯', text: 'Liberación por milestones alcanzados' },
+                { icon: '🛡️', text: 'Protección a inversores' },
+                { icon: '📊', text: 'Transparencia total on-chain' }
+            ],
+            examples: ['Tech Startups', 'Proyectos Web3', 'Innovación']
         },
         {
             color: 'indigo',
+            gradient: 'from-indigo-500 via-violet-500 to-indigo-600',
             icon: 'briefcase',
+            emoji: '💼',
+            badge: 'B2B',
+            badgeColor: 'bg-indigo-500',
             title: 'Servicios Profesionales',
-            description: 'Asesoría legal, fiscal, consultoría. Pago tras entrega de informes o resultados.',
+            subtitle: 'Legal, Fiscal & Consultoría',
+            description: 'Pago tras entrega de resultados verificables. Confidencialidad y seguridad garantizadas.',
+            stat: '$10K',
+            statLabel: 'Proyecto promedio',
+            savingExample: 'Ahorra $290 en tarifas',
             features: [
-                'Entregables verificables',
-                'Pago por resultados',
-                'Confidencialidad garantizada'
-            ]
+                { icon: '📋', text: 'Entregables verificables' },
+                { icon: '🎯', text: 'Pago basado en resultados' },
+                { icon: '🔒', text: 'Confidencialidad absoluta' }
+            ],
+            examples: ['Legal', 'Contabilidad', 'Consultoría']
         }
     ];
 
-    return useCases.map(useCase => `
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-            <div class="h-2 bg-gradient-to-r from-${useCase.color}-500 to-${useCase.color}-600"></div>
-            <div class="p-6">
-                <div class="w-12 h-12 bg-${useCase.color}-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-${useCase.icon} text-${useCase.color}-600 text-xl"></i>
+    return useCases.map((useCase, index) => `
+        <div class="group bg-white rounded-2xl shadow-xl overflow-hidden card-hover relative border border-gray-100 hover:border-${useCase.color}-200 transition-all duration-500">
+            <!-- Gradient Header -->
+            <div class="h-3 bg-gradient-to-r ${useCase.gradient} relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-6 relative">
+                <!-- Badge & Icon Row -->
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-14 h-14 bg-gradient-to-br ${useCase.gradient} rounded-xl flex items-center justify-center text-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            ${useCase.emoji}
+                        </div>
+                        <div>
+                            <span class="${useCase.badgeColor} text-white text-xs font-bold px-2 py-1 rounded-full">
+                                ${useCase.badge}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold bg-gradient-to-r ${useCase.gradient} bg-clip-text text-transparent">
+                            ${useCase.stat}
+                        </div>
+                        <div class="text-xs text-gray-500">${useCase.statLabel}</div>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-3">${useCase.title}</h3>
-                <p class="text-gray-600 mb-4">${useCase.description}</p>
-                <ul class="space-y-2 text-sm">
+
+                <!-- Title & Subtitle -->
+                <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-${useCase.color}-600 transition-colors">
+                    ${useCase.title}
+                </h3>
+                <p class="text-sm text-${useCase.color}-600 font-medium mb-3">
+                    ${useCase.subtitle}
+                </p>
+                
+                <!-- Description -->
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                    ${useCase.description}
+                </p>
+
+                <!-- Saving Highlight -->
+                <div class="bg-${useCase.color}-50 border border-${useCase.color}-100 rounded-lg p-3 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg">💰</span>
+                        <span class="text-sm font-semibold text-${useCase.color}-700">
+                            ${useCase.savingExample}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <ul class="space-y-2.5 mb-4">
                     ${useCase.features.map(feature => `
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check text-green-500 mt-1"></i>
-                            <span>${feature}</span>
+                        <li class="flex items-start gap-2.5 text-sm group/item">
+                            <span class="text-lg flex-shrink-0 transform group-hover/item:scale-125 transition-transform">
+                                ${feature.icon}
+                            </span>
+                            <span class="text-gray-700 leading-snug">${feature.text}</span>
                         </li>
                     `).join('')}
                 </ul>
+
+                <!-- Examples Tags -->
+                <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-100">
+                    ${useCase.examples.map(example => `
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full hover:bg-${useCase.color}-100 hover:text-${useCase.color}-700 transition-colors cursor-default">
+                            ${example}
+                        </span>
+                    `).join('')}
+                </div>
+
+                <!-- Hover Effect Icon -->
+                <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fas fa-arrow-right text-${useCase.color}-500 text-xl"></i>
+                </div>
             </div>
+
+            <!-- Bottom Glow Effect -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${useCase.gradient} opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </div>
     `).join('');
 }
