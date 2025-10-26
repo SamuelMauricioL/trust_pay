@@ -5,6 +5,7 @@ import { useStarknetTransaction } from '../hooks/useStarknetTransaction';
 import WalletModal from './wallet/WalletModal';
 import WalletConnectionSection from './wallet/WalletConnectionSection';
 import PaymentMethodCard from './checkout/PaymentMethodCard';
+import NetworkWarning from './NetworkWarning';
 
 function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
   const [showWalletModal, setShowWalletModal] = useState(false);
@@ -66,6 +67,9 @@ function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
       <h1 className="text-3xl font-bold mb-8">Verificar</h1>
+      
+      {/* Advertencia de red */}
+      <NetworkWarning />
 
       {/* Detalles de la cuenta */}
       <div className="mb-6">

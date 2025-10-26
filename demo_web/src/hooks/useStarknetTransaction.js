@@ -1,16 +1,16 @@
 import { useState } from 'react';
+import { getNetworkConfig, getTransactionUrl } from '../config/starknet.config';
 
 export const useStarknetTransaction = (walletInstance) => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [txHash, setTxHash] = useState(null);
   const [error, setError] = useState(null);
 
-  // Dirección del contrato del token (ETH en Starknet)
-  const ETH_TOKEN_ADDRESS = '0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7';
-  
-  // Dirección donde se reciben los pagos (merchant/vendedor)
-  // Ready Wallet - Dirección que recibe los pagos
-  const PAYMENT_RECIPIENT = '0x01793c5c078B9C54d74f0dF5e8679dE82b2dc683a758aB20BAf59b8448488b60';
+  // Obtener configuración de red (mainnet o testnet)
+  const networkConfig = getNetworkConfig();
+  const ETH_TOKEN_ADDRESS = networkConfig.ethTokenAddress;
+  const PAYMENT_RECIPIENT = networkConfig.paymentRecipient;
+  const ethPriceUSD = networkConfig.ethPriceUSD;
 
   /**
    * Envía una transacción de pago
@@ -28,18 +28,20 @@ export const useStarknetTransaction = (walletInstance) => {
     setTxHash(null);
 
     try {
-      // Convertir el monto de soles a wei (asumiendo 1 ETH = cierto valor en soles)
-      // Por ahora usaremos un valor de ejemplo - necesitarás un oracle de precios real
-      const ethPriceInSoles = 10000; // Ejemplo: 1 ETH = 10000 soles
-      const amountInEth = amount / ethPriceInSoles;
+      // Convertir el monto de USD a ETH
+      // IMPORTANTE: En producción, usa un oracle de precios en tiempo real (ej: Pragma, Chainlink)
+      const amountInEth = amount / ethPriceUSD;
       const amountInWei = (amountInEth * 1e18).toString();
 
-      console.log('Preparando pago:', {
-        amountInSoles: amount,
+      const logPrefix = networkConfig.isMainnet ? '⚠️ MAINNET (FONDOS REALES)' : '🧪 TESTNET';
+      console.log(`${logPrefix} - Preparando pago:`, {
+        amountInUSD: amount,
         amountInEth,
         amountInWei,
         recipient: PAYMENT_RECIPIENT,
-        token: tokenAddress
+        token: tokenAddress,
+        network: networkConfig.name,
+        ethPrice: ethPriceUSD
       });
 
       // Llamar al contrato del token para transferir
@@ -53,12 +55,16 @@ export const useStarknetTransaction = (walletInstance) => {
         ]
       };
 
+      if (networkConfig.isMainnet) {
+        console.warn('⚠️ ¡ATENCIÓN! Ejecutando transacción en MAINNET con fondos REALES');
+      }
       console.log('Ejecutando transacción...');
 
       // Ejecutar la transacción
       const result = await walletInstance.account.execute(transferCall);
       
       console.log('Transacción enviada:', result);
+      console.log('Ver en explorador:', getTransactionUrl(result.transaction_hash));
       
       setTxHash(result.transaction_hash);
       setIsProcessing(false);
