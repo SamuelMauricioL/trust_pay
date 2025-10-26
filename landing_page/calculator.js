@@ -5,15 +5,23 @@ function calculateFees(amount) {
     const stripeFee = (amount * 0.029) + 0.30;
     const paypalFee = (amount * 0.03) + 0.49;
     
-    // TrustPay (Starknet) - 1.5% + network fee
+    // TrustPay (Starknet) - Gas Fee de Arbitraje (0.5% - 1.5%) + network fee
     const networkFee = 0.05; // Average network fee between $0.01 and $0.10
-    const trustpayFee = (amount * 0.015) + networkFee;
+    const gasFeeArbitrage = amount * 0.01; // Average 1% (between 0.5% - 1.5%)
+    const trustpayFee = gasFeeArbitrage + networkFee;
+    
+    // Fee adicional solo si hay disputa
+    const disputeFee = amount * 0.015; // 1.5% adicional en caso de disputa
+    const trustpayFeeWithDispute = trustpayFee + disputeFee;
     
     return {
         stripe: stripeFee,
         paypal: paypalFee,
         trustpay: trustpayFee,
+        trustpayWithDispute: trustpayFeeWithDispute,
         networkFee: networkFee,
+        gasFeeArbitrage: gasFeeArbitrage,
+        disputeFee: disputeFee,
         stripeSavings: stripeFee - trustpayFee,
         paypalSavings: paypalFee - trustpayFee
     };
@@ -141,7 +149,7 @@ function updateCalculator() {
                 
                 <div class="mb-2">
                     <p class="text-2xl font-bold text-green-600 mb-0.5">$${fees.trustpay.toFixed(2)}</p>
-                    <p class="text-xs text-gray-600">1.5% + $${fees.networkFee.toFixed(2)} red</p>
+                    <p class="text-xs text-gray-600">~1% Gas + $${fees.networkFee.toFixed(2)} red</p>
                 </div>
                 
                 <!-- Progress Bar -->
@@ -149,6 +157,11 @@ function updateCalculator() {
                     <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-1.5 rounded-full transition-all duration-1000" style="width: ${trustpayPercent}%"></div>
                 </div>
                 <p class="text-xs text-green-600 font-bold">Máximo ahorro 🎯</p>
+                
+                <!-- Dispute Note -->
+                <div class="mt-2 bg-blue-50 rounded px-2 py-1">
+                    <p class="text-xs text-blue-700">⚖️ +1.5% solo si hay disputa</p>
+                </div>
             </div>
         </div>
 

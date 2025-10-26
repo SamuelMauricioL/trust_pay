@@ -63,13 +63,42 @@ Nueva calculadora interactiva con:
 
 ## 🎯 Características del Sitio
 
-- **Hero Section**: Propuesta de valor principal con ahorro del 99%
+- **Hero Section**: Propuesta de valor principal con ahorro del 67%
 - **Tabla Comparativa**: Comparación de tarifas vs Stripe/PayPal
 - **Calculadora de Ahorros**: Interactiva para cualquier monto
 - **Características del Producto**: 6 características principales
 - **Sección AI Arbitraje**: Explicación del oráculo de decisión con IA
 - **Casos de Uso**: 6 industrias diferentes con ejemplos
 - **CTA y Footer**: Llamados a la acción y navegación
+
+## 💰 Modelo de Monetización
+
+### Gas Fee de Arbitraje
+TrustPay utiliza un modelo de tarifas innovador:
+
+**Tarifa Base:**
+- **0.5% - 1.5%** Gas Fee de Arbitraje (promedio ~1%)
+- **$0.05** fee de red (promedio entre $0.01 - $0.10)
+
+**Fee Adicional por Disputa:**
+- **+1.5%** adicional SOLO si hay disputa y se requiere arbitraje con IA
+- Sin disputa: La tarifa se mantiene en ~1% + fee de red
+
+**Ejemplos:**
+
+| Monto | Sin Disputa | Con Disputa | vs Stripe (2.9%) |
+|-------|-------------|-------------|------------------|
+| $100  | $1.05       | $2.55       | Ahorro: 67% / 20% |
+| $1,000| $10.05      | $25.05      | Ahorro: 66% / 15% |
+| $10,000| $100.05   | $250.05     | Ahorro: 66% / 14% |
+
+### Comparación con Competencia
+
+- **Stripe:** 2.9% + $0.30 (siempre)
+- **PayPal:** 3.0% + $0.49 (siempre)
+- **TrustPay:** ~1% + $0.05 (sin disputa) | 2.5% + $0.05 (con disputa)
+
+**Ventaja:** Incentiva resolver sin disputas, reduciendo costos para todos.
 
 ## 📁 Estructura de Archivos
 
