@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Check, CreditCard, Smartphone, Wallet as WalletIcon } from 'lucide-react';
 import { useWalletConnection } from '../hooks/useWalletConnection';
 import { useStarknetTransaction } from '../hooks/useStarknetTransaction';
@@ -8,6 +9,7 @@ import PaymentMethodCard from './checkout/PaymentMethodCard';
 import NetworkWarning from './NetworkWarning';
 
 function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
+  const navigate = useNavigate();
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [availableWallets, setAvailableWallets] = useState([]);
 
@@ -60,6 +62,10 @@ function CheckoutForm({ paymentMethod, setPaymentMethod, totalAmount }) {
 
     if (result.success) {
       console.log('Pago exitoso:', result.txHash);
+      // Redirigir a la página del curso después del pago exitoso
+      setTimeout(() => {
+        navigate('/course');
+      }, 1500); // Delay de 1.5s para que el usuario vea el mensaje de éxito
     } else {
       console.error('Error en pago:', result.error);
     }
