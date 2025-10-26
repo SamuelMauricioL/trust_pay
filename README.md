@@ -516,16 +516,18 @@ Este proyecto está bajo la licencia MIT. Ver archivo `LICENSE` para más detall
 
 ## 👥 Equipo
 
-**Samuel Mauricio** - Creator & Lead Developer
+**Samuel Mauricio** - Co-Creator & Lead Developer
 - GitHub: [@SamuelMauricioL](https://github.com/SamuelMauricioL)
 - Twitter: [@SamuelMauricioL](https://twitter.com/SamuelMauricioL)
+
+**Oskar Mauricio** - Co-Creator & Lead Director
+- GitHub: [@AcheZetaa](https://github.com/AcheZetaa)
 
 ---
 
 ## 🙏 Agradecimientos
 
 - [Starknet](https://www.starknet.io/) - Layer 2 solution
-- [OpenAI](https://openai.com/) - GPT-4 API
 - [StarkWare](https://starkware.co/) - Cairo & tooling
 - Comunidad de Starknet Español
 
