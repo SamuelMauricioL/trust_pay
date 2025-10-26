@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustPay - Pagos Seguros con Criptomonedas y Escrow Inteligente</title>
+    <meta name="description" content="Reduce hasta 99% los costos de transacción con TrustPay. Pagos seguros en blockchain con smart contracts de escrow y arbitraje con IA.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">TrustPay</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-primary transition">Características</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-primary transition">Precios</a>
+                    <a href="#use-cases" class="text-gray-700 hover:text-primary transition">Casos de Uso</a>
+                    <a href="#ai-arbitrage" class="text-gray-700 hover:text-primary transition">IA Arbitraje</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#demo" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition">
+                        Probar Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Reduce hasta <span class="text-yellow-300">99%</span> en Tarifas de Transacción
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-100">
+                        Pagos seguros con blockchain, smart contracts de escrow y arbitraje con IA. 
+                        Olvídate de las altas comisiones de procesadores tradicionales.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#demo" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition text-center">
+                            Comenzar Ahora
+                        </a>
+                        <a href="#pricing" class="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition text-center">
+                            Ver Comparativa
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-6 text-sm flex-wrap">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-300"></i>
+                            <span>Sin tarifas ocultas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-lock text-green-300"></i>
+                            <span>100% Seguro</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-bolt text-yellow-300"></i>
+                            <span>Instantáneo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Ahorro Real por Transacción</h3>
+                            <p class="text-gray-200">Ejemplo: Venta de curso de $100 USD</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-red-500/20 border border-red-400/50 rounded-lg p-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold">Stripe/PayPal</span>
+                                    <span class="text-2xl font-bold">$3.20</span>
+                                </div>
+                                <p class="text-sm text-gray-200 mt-1">2.9% + $0.30</p>
+                            </div>
+                            <div class="bg-green-500/20 border border-green-400/50 rounded-lg p-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold">TrustPay (Starknet)</span>
+                                    <span class="text-2xl font-bold text-green-300">$0.05</span>
+                                </div>
+                                <p class="text-sm text-gray-200 mt-1">Tarifa fija de red</p>
+                            </div>
+                            <div class="bg-yellow-500/20 border border-yellow-400/50 rounded-lg p-4 text-center">
+                                <p class="text-sm text-gray-200">Ahorras</p>
+                                <p class="text-4xl font-bold text-yellow-300">$3.15</p>
+                                <p class="text-sm text-gray-200">98.4% de reducción</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue in next part -->
+    <div id="pricing"></div>
+    <div id="features"></div>
+    <div id="ai-arbitrage"></div>
+    <div id="use-cases"></div>
+    
+    <!-- Load sections -->
+    <script src="sections.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>
