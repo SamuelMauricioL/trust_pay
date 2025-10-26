@@ -3,3 +3,8 @@ target
 snfoundry_trace/
 coverage/
 profile/
+
+# Environment variables with secrets
+.env.deployment
+.env
+*.key
