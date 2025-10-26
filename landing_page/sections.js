@@ -15,7 +15,7 @@ const pricingSection = `
                 ¿Por Qué Pagar <span class="text-red-600">Más</span>?
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Los métodos tradicionales te cobran <strong>hasta 98% más</strong>. 
+                Los métodos tradicionales te cobran <strong>hasta 50% más</strong>. 
                 Con TrustPay, tu dinero se queda donde debe: <strong>contigo</strong> 💰
             </p>
         </div>
@@ -116,20 +116,20 @@ const pricingSection = `
 
                 <!-- Fee -->
                 <div class="mb-4">
-                    <p class="text-3xl font-black text-green-600 mb-1">$0.01 - $0.10</p>
-                    <p class="text-sm text-gray-700">Tarifa fija de red</p>
+                    <p class="text-3xl font-black text-green-600 mb-1">1.5% + $0.05</p>
+                    <p class="text-sm text-gray-700">1.5% + fee de red</p>
                 </div>
 
                 <!-- Example -->
                 <div class="bg-green-100 rounded-lg p-3 mb-4">
                     <p class="text-xs text-gray-700 mb-1">💡 Ejemplo en $1,000:</p>
-                    <p class="text-lg font-bold text-green-600">Pagas $0.05</p>
+                    <p class="text-lg font-bold text-green-600">Pagas $15.05</p>
                 </div>
 
                 <!-- Benefit Badge -->
                 <div class="flex items-center gap-2 text-xs">
                     <i class="fas fa-check-circle text-green-500"></i>
-                    <span class="text-green-700 font-bold">No importa el monto! 🎯</span>
+                    <span class="text-green-700 font-bold">50% más barato! 🎯</span>
                 </div>
             </div>
         </div>
@@ -171,11 +171,11 @@ const pricingSection = `
                 <div>
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-sm font-semibold text-gray-700">TrustPay</span>
-                        <span class="text-sm font-bold text-green-600">$0.05</span>
+                        <span class="text-sm font-bold text-green-600">$15.05</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-8 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="width: 0.5%">
-                            🎉
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="width: 15%">
+                            1.5%
                         </div>
                     </div>
                 </div>
@@ -187,8 +187,8 @@ const pricingSection = `
                     <span class="text-3xl">💰</span>
                     <div class="text-center">
                         <p class="text-sm text-gray-700">Ahorras con TrustPay</p>
-                        <p class="text-3xl font-black text-orange-600">$29.25 - $30.44</p>
-                        <p class="text-xs text-gray-600">Por cada $1,000 transaccionados</p>
+                        <p class="text-3xl font-black text-orange-600">$14.25 - $15.44</p>
+                        <p class="text-xs text-gray-600">Por cada $1,000 transaccionados (50% menos)</p>
                     </div>
                 </div>
             </div>

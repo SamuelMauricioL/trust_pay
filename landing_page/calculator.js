@@ -5,13 +5,15 @@ function calculateFees(amount) {
     const stripeFee = (amount * 0.029) + 0.30;
     const paypalFee = (amount * 0.03) + 0.49;
     
-    // TrustPay (Starknet) - fixed fee
-    const trustpayFee = 0.05; // Average between $0.01 and $0.10
+    // TrustPay (Starknet) - 1.5% + network fee
+    const networkFee = 0.05; // Average network fee between $0.01 and $0.10
+    const trustpayFee = (amount * 0.015) + networkFee;
     
     return {
         stripe: stripeFee,
         paypal: paypalFee,
         trustpay: trustpayFee,
+        networkFee: networkFee,
         stripeSavings: stripeFee - trustpayFee,
         paypalSavings: paypalFee - trustpayFee
     };
@@ -139,7 +141,7 @@ function updateCalculator() {
                 
                 <div class="mb-2">
                     <p class="text-2xl font-bold text-green-600 mb-0.5">$${fees.trustpay.toFixed(2)}</p>
-                    <p class="text-xs text-gray-600">Tarifa fija de red</p>
+                    <p class="text-xs text-gray-600">1.5% + $${fees.networkFee.toFixed(2)} red</p>
                 </div>
                 
                 <!-- Progress Bar -->
