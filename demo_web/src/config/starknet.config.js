@@ -19,7 +19,8 @@ export const NETWORK_CONFIG = {
     paymentRecipient: '0x02Fbdb9db892EDA97e843f7dB1c0657594E7eB7bE80eFAb2bFe400B24aaceDa8',
     explorerUrl: 'https://starkscan.co',
     // Precio aproximado de ETH en USD - USAR ORACLE EN PRODUCCIÓN
-    ethPriceUSD: 2500,
+    // Actualizado: 25 Oct 2025
+    ethPriceUSD: 3950,
   },
   
   testnet: {
