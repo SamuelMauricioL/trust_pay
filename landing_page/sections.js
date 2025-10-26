@@ -323,7 +323,7 @@ function loadUseCasesSection() {
                         Únete a miles de negocios que ya están ahorrando con TrustPay
                     </p>
                     <div class="flex justify-center gap-4">
-                        <a href="#demo" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
+                        <a href="https://trust-pay-7vyx.vercel.app/" target="_blank" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
                             Probar Demo Gratis
                         </a>
                         <a href="#contact" class="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition">
@@ -347,7 +347,7 @@ function loadUseCasesSection() {
                         <ul class="space-y-2 text-gray-400">
                             <li><a href="#features" class="hover:text-white transition">Características</a></li>
                             <li><a href="#pricing" class="hover:text-white transition">Precios</a></li>
-                            <li><a href="#demo" class="hover:text-white transition">Demo</a></li>
+                            <li><a href="https://trust-pay-7vyx.vercel.app/" target="_blank" class="hover:text-white transition">Demo</a></li>
                         </ul>
                     </div>
                     <div>
